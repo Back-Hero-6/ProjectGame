@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Warrior extends Character{
     private int stamina; //Pendiente: random between 10-50, representing a resource
     // the warrior consumes to make an attack (Private member)
@@ -9,7 +11,8 @@ public class Warrior extends Character{
     public Warrior(String name, int hp, int stamina, int strength) {
         super(name, hp);
         setStamina(stamina);
-        setStrength(strength);
+        strength= new Random().nextInt(9)+1;
+        hp=new Random().nextInt(100)+100;
     }
 
     //Getters & Setters

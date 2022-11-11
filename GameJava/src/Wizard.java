@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Wizard extends Character{
     private int mana; //Pendiente: random between 10-50, representing a
     // resource the wizard consumes to cast spells (Private member)
@@ -7,8 +9,9 @@ public class Wizard extends Character{
     //Constructor
     public Wizard(String name, int hp, int mana, int intelligence) {
         super(name, hp);
-        setMana(mana);
+        mana=hp=new Random().nextInt(40)+10;
         setIntelligence(intelligence);
+        hp=new Random().nextInt(50)+50;
     }
 
     //Getters & Setters
