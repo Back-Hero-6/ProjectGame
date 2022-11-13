@@ -34,7 +34,7 @@ public class Main {
                 int newStrenght = new Random().nextInt(9)+1;
                 character1 = new Warrior(newName, newHp, newStamina, newStrenght);
 
-                sc.close();
+                break;
             }
             case 2:{
 
@@ -48,10 +48,11 @@ public class Main {
                 int newIntelligence = new Random().nextInt(49)+10;
                 character1 = new Wizard(newName, newHp, newMana, newIntelligence);
 
-                sc.close();
+                break;
             }
             default:{
                 System.out.println("select a correct class");
+                break;
             }
         }
 
@@ -79,7 +80,7 @@ public class Main {
                 int newStrenght = new Random().nextInt(9)+1;
                 character2 = new Warrior(newName, newHp, newStamina, newStrenght);
 
-                sc.close();
+                break;
             }
             case 2:{
 
@@ -93,10 +94,11 @@ public class Main {
                 int newIntelligence = new Random().nextInt(49)+10;
                 character2 = new Wizard(newName, newHp, newMana, newIntelligence);
 
-                sc.close();
+                break;
             }
             default:{
                 System.out.println("select a correct class");
+                break;
             }
         }
     }
