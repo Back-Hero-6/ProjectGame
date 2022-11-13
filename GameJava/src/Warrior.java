@@ -11,8 +11,7 @@ public class Warrior extends Character{
     public Warrior(String name, int hp, int stamina, int strength) {
         super(name, hp);
         setStamina(stamina);
-        strength= new Random().nextInt(9)+1;
-        hp=new Random().nextInt(100)+100;
+        setStrength(strength);
     }
 
     //Getters & Setters

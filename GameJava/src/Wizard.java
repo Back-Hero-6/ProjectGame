@@ -9,9 +9,9 @@ public class Wizard extends Character{
     //Constructor
     public Wizard(String name, int hp, int mana, int intelligence) {
         super(name, hp);
-        mana=hp=new Random().nextInt(40)+10;
+        setMana(mana);
         setIntelligence(intelligence);
-        hp=new Random().nextInt(50)+50;
+
     }
 
     //Getters & Setters

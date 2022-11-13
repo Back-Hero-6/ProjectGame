@@ -1,4 +1,4 @@
-public abstract class Character {
+public class Character {
     private String id;
     private String name;
     private int hp; // Pendiente: random between 100-200 to warriors and 50-100 for wizards,
