@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Warrior extends Character{
+public class Warrior extends Character {
     private int stamina; //Pendiente: random between 10-50, representing a resource
     // the warrior consumes to make an attack (Private member)
     private int strength; //Pendiente: random between 1-10, measuring how strong
@@ -34,8 +34,20 @@ public class Warrior extends Character{
     }
 
     //Function Attack
-    public void attack(Character character){
-        //pendiente:  that will take a character as a parameter and
-        // reduce that character’s health based on the strength of the attack.
+    public void attack(Character enemy) {
+        int battleMode = (Math.random() <= 0.5) ? 1 : 2;
+
+        if (battleMode == 1 && getStamina() >= 5) {
+                enemy.setHp(enemy.getHp() - getStrength());
+                setStamina(getStamina() - 5);
+        }
+
+        if (getStamina() >= 1) {
+            enemy.setHp(enemy.getHp() - (getStrength() / 2));
+            setStamina(getStamina() + 1);
+
+        } else setStamina(getStamina() + 2);
+        //pendiente:  that will take a character as a parameter and// reduce that character’s health based on the strength of the attack.
     }
 }
+
