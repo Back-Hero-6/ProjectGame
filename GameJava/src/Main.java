@@ -4,15 +4,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner((System.in));
-        Character character1;
+
         Character character2;
 
         System.out.println("Bienvenido al Battle 1 vs 1. \nA continuación escoge el nombre y tipo de jugadores que se van a enfrentar a muerte.");
 
-        System.out.println("First create the Cacharacter 1");
+        createFirstCharacter();
+        createSecondCharacter();
+
+    }
+
+    private static Character createFirstCharacter(){
+        Scanner sc = new Scanner((System.in));
+
+        System.out.println("First create the Character 1");
         System.out.println("----- ---------");
-        System.out.println("Classes availible:");
+        System.out.println("Classes available:");
         System.out.println("[1] -> Warrior");
         System.out.println("[2] -> Wizard");
 
@@ -33,10 +40,10 @@ public class Main {
                     int newHp = new Random().nextInt(100) + 100;
                     int newStamina = new Random().nextInt(49) + 10;
                     int newStrenght = new Random().nextInt(9) + 1;
-                    character1 = new Warrior(newName, newHp, newStamina, newStrenght);
+                    Character character1 = new Warrior(newName, newHp, newStamina, newStrenght);
                     options1=0;
+                    return character1;
                     break;
-
                 }
                 case 2: {
 
@@ -48,8 +55,9 @@ public class Main {
                     int newHp = new Random().nextInt(50) + 50;
                     int newMana = new Random().nextInt(40) + 10;
                     int newIntelligence = new Random().nextInt(49) + 10;
-                    character1 = new Wizard(newName, newHp, newMana, newIntelligence);
+                    Character character1 = new Wizard(newName, newHp, newMana, newIntelligence);
                     options1=0;
+                    return character1;
                     break;
                 }
                 default: {
@@ -59,10 +67,14 @@ public class Main {
                 }
             }
         }
+                  return null;
+    }
 
+    private static Character createSecondCharacter(){
+        Scanner sc = new Scanner((System.in));
         System.out.println("Now create the second character");
         System.out.println("----- ---------");
-        System.out.println("Classes availible:");
+        System.out.println("Classes available:");
         System.out.println("[1] -> Warrior");
         System.out.println("[2] -> Wizard");
 
@@ -72,8 +84,8 @@ public class Main {
 
         while (options2 != 0)
             options2 = sc.nextInt();
-            switch (options2){
-                case 1:{
+        switch (options2){
+            case 1:{
 
                 System.out.println("You have chosen the warrior 2");
                 System.out.println("----- ---------");
@@ -83,11 +95,12 @@ public class Main {
                 int newHp = new Random().nextInt(100)+100;
                 int newStamina = new Random().nextInt(49)+10;
                 int newStrenght = new Random().nextInt(9)+1;
-                character2 = new Warrior(newName, newHp, newStamina, newStrenght);
+                Character character2 = new Warrior(newName, newHp, newStamina, newStrenght);
                 options2=0;
+                return character2;
                 break;
-                }
-                 case 2:{
+            }
+            case 2:{
 
                 System.out.println("You have chosen the wizard 2 ");
                 System.out.println("----- ---------");
@@ -97,14 +110,17 @@ public class Main {
                 int newHp = new Random().nextInt(50)+50;
                 int newMana = new Random().nextInt(40)+10;
                 int newIntelligence = new Random().nextInt(49)+10;
-                character2 = new Wizard(newName, newHp, newMana, newIntelligence);
+                Character character2 = new Wizard(newName, newHp, newMana, newIntelligence);
                 options2=0;
+                return character2;
                 break;
-                }
-                default:{
+            }
+            default:{
                 System.out.println("select a correct class");
 
             }
         }
+        return null;
     }
+
 }
