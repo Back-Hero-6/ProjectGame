@@ -9,7 +9,6 @@ public class Main {
 
         createFirstCharacter();
         createSecondCharacter();
-
     }
 
     private static Character createFirstCharacter(){
@@ -41,7 +40,6 @@ public class Main {
                     Character character1 = new Warrior(newName, newHp, newStamina, newStrenght);
                     options1=0;
                     return character1;
-                    break;
                 }
                 case 2: {
 
@@ -56,7 +54,7 @@ public class Main {
                     Character character1 = new Wizard(newName, newHp, newMana, newIntelligence);
                     options1=0;
                     return character1;
-                    break;
+
                 }
                 default: {
 
@@ -96,7 +94,7 @@ public class Main {
                 Character character2 = new Warrior(newName, newHp, newStamina, newStrenght);
                 options2=0;
                 return character2;
-                break;
+
             }
             case 2:{
 
@@ -111,14 +109,14 @@ public class Main {
                 Character character2 = new Wizard(newName, newHp, newMana, newIntelligence);
                 options2=0;
                 return character2;
-                break;
+
             }
             default:{
                 System.out.println("select a correct class");
 
             }
         }
-        return null;
+        return ;
     }
 
 }
