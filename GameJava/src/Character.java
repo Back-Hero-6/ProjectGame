@@ -12,7 +12,6 @@ public class Character {
         setHp(hp);
     }
 
-
     //Getter & Setters
 
     public String getId() {

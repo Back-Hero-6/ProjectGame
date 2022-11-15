@@ -24,9 +24,9 @@ public class Main {
         switch (options1){
             case 1:{
 
-                System.out.println("You have chosen the warrior ");
+                System.out.println("You have chosen the warrior 1 ");
                 System.out.println("----- ---------");
-                System.out.println("Give the warrior a name");
+                System.out.println("Give the warrior 1 a name");
 
                 String newName = sc.next();
                 int newHp = new Random().nextInt(100)+100;
@@ -38,9 +38,9 @@ public class Main {
             }
             case 2:{
 
-                System.out.println("You have chosen the wizard ");
+                System.out.println("You have chosen the wizard 1 ");
                 System.out.println("----- ---------");
-                System.out.println("Give the wizard a name");
+                System.out.println("Give the wizard 1 a name");
 
                 String newName = sc.next();
                 int newHp = new Random().nextInt(50)+50;
@@ -70,9 +70,9 @@ public class Main {
         switch (options2){
             case 1:{
 
-                System.out.println("You have chosen the warrior ");
+                System.out.println("You have chosen the warrior 2");
                 System.out.println("----- ---------");
-                System.out.println("Give the warrior a name");
+                System.out.println("Give the warrior 2 a name");
 
                 String newName = sc.next();
                 int newHp = new Random().nextInt(100)+100;
@@ -84,9 +84,9 @@ public class Main {
             }
             case 2:{
 
-                System.out.println("You have chosen the wizard ");
+                System.out.println("You have chosen the wizard 2 ");
                 System.out.println("----- ---------");
-                System.out.println("Give the wizard a name");
+                System.out.println("Give the wizard 2 a name ");
 
                 String newName = sc.next();
                 int newHp = new Random().nextInt(50)+50;
