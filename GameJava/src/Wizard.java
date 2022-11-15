@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Wizard extends Character{
     private int mana; //Pendiente: random between 10-50, representing a
     // resource the wizard consumes to cast spells (Private member)
@@ -34,24 +32,17 @@ public class Wizard extends Character{
 
     //Function Attack
     public void attack(Character enemy){
-        enemy.setHp(enemy.getHp()-getIntelligence());
-        //pendiente:  that will take a character as a parameter and
-        // reduce that character’s health based on the intelligence of the wizard
-
-        // public void attack(Character enemy) {
-        //        int battleMode = (Math.random() <= 0.5) ? 1 : 2;
-        //
-        //        if (battleMode == 1 && getStamina() >= 5) {
-        //                enemy.setHp(enemy.getHp() - getStrength());
-        //                setStamina(getStamina() - 5);
-        //        }
-        //
-        //        if (getStamina() >= 1) {
-        //            enemy.setHp(enemy.getHp() - (getStrength() / 2));
-        //            setStamina(getStamina() + 1);
-        //
-        //        } else setStamina(getStamina() + 2);
-        //        //pendiente:  that will take a character as a parameter and// reduce that character’s health based on the strength of the attack.
-        //    }
+        int battleMode = (Math.random() <= 0.5) ? 1 : 2;
+        if (battleMode == 1 && getMana() >= 5) {
+            enemy.setHp(enemy.getHp()-getIntelligence());
+            setMana(getMana() - 5);
+            System.out.println("Fireball!");
+        } else if (getMana() >= 1) {
+            enemy.setHp(enemy.getHp() - (getMana() / 2)); //check if it is really Mana/2 or only -2hp points.
+            setMana(getMana() + 1);
+            System.out.println("Staff hit!");
+        } else setMana(getMana() + 2);
+        System.out.println("Not enough mana to perform attack. Mana was increased to 2");
     }
 }
+
