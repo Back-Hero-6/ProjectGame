@@ -13,7 +13,7 @@ public class Main {
 
     private static Character createFirstCharacter(){
         Scanner sc = new Scanner((System.in));
-
+        Character character1 = null;
         System.out.println("First create the Character 1");
         System.out.println("----- ---------");
         System.out.println("Classes available:");
@@ -37,7 +37,7 @@ public class Main {
                     int newHp = new Random().nextInt(100) + 100;
                     int newStamina = new Random().nextInt(49) + 10;
                     int newStrenght = new Random().nextInt(9) + 1;
-                    Character character1 = new Warrior(newName, newHp, newStamina, newStrenght);
+                    character1 = new Warrior(newName, newHp, newStamina, newStrenght);
                     options1=0;
                     return character1;
                 }
@@ -51,23 +51,22 @@ public class Main {
                     int newHp = new Random().nextInt(50) + 50;
                     int newMana = new Random().nextInt(40) + 10;
                     int newIntelligence = new Random().nextInt(49) + 10;
-                    Character character1 = new Wizard(newName, newHp, newMana, newIntelligence);
+                    character1 = new Wizard(newName, newHp, newMana, newIntelligence);
                     options1=0;
                     return character1;
-
                 }
                 default: {
-
                     System.out.println("select a correct class. Chose again");
                     break;
                 }
             }
         }
-                  return null;
+        return character1;
     }
 
     private static Character createSecondCharacter(){
         Scanner sc = new Scanner((System.in));
+        Character character2 = null;
         System.out.println("Now create the second character");
         System.out.println("----- ---------");
         System.out.println("Classes available:");
@@ -78,45 +77,44 @@ public class Main {
 
         int options2 = 1;
 
-        while (options2 != 0)
+        while (options2 != 0){
             options2 = sc.nextInt();
-        switch (options2){
-            case 1:{
+            switch (options2){
+                case 1:{
 
-                System.out.println("You have chosen the warrior 2");
-                System.out.println("----- ---------");
-                System.out.println("Give the warrior 2 a name");
+                    System.out.println("You have chosen the warrior 2");
+                    System.out.println("----- ---------");
+                    System.out.println("Give the warrior 2 a name");
 
-                String newName = sc.next();
-                int newHp = new Random().nextInt(100)+100;
-                int newStamina = new Random().nextInt(49)+10;
-                int newStrenght = new Random().nextInt(9)+1;
-                Character character2 = new Warrior(newName, newHp, newStamina, newStrenght);
-                options2=0;
-                return character2;
+                    String newName = sc.next();
+                    int newHp = new Random().nextInt(100)+100;
+                    int newStamina = new Random().nextInt(49)+10;
+                    int newStrenght = new Random().nextInt(9)+1;
+                    character2 = new Warrior(newName, newHp, newStamina, newStrenght);
+                    options2=0;
+                    return character2;
 
+                }
+                case 2:{
+
+                    System.out.println("You have chosen the wizard 2 ");
+                    System.out.println("----- ---------");
+                    System.out.println("Give the wizard 2 a name ");
+
+                    String newName = sc.next();
+                    int newHp = new Random().nextInt(50)+50;
+                    int newMana = new Random().nextInt(40)+10;
+                    int newIntelligence = new Random().nextInt(49)+10;
+                    character2 = new Wizard(newName, newHp, newMana, newIntelligence);
+                    options2=0;
+                    return character2;
+                }
+                default:{
+                    System.out.println("select a correct class");
+                }
             }
-            case 2:{
+       }
 
-                System.out.println("You have chosen the wizard 2 ");
-                System.out.println("----- ---------");
-                System.out.println("Give the wizard 2 a name ");
-
-                String newName = sc.next();
-                int newHp = new Random().nextInt(50)+50;
-                int newMana = new Random().nextInt(40)+10;
-                int newIntelligence = new Random().nextInt(49)+10;
-                Character character2 = new Wizard(newName, newHp, newMana, newIntelligence);
-                options2=0;
-                return character2;
-
-            }
-            default:{
-                System.out.println("select a correct class");
-
-            }
-        }
-        return ;
+        return character2;
     }
-
 }
