@@ -5,9 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Character character2;
-
-        System.out.println("Bienvenido al Battle 1 vs 1. \nA continuación escoge el nombre y tipo de jugadores que se van a enfrentar a muerte.");
+        System.out.println("Welcome to Battle 1 vs 1. \nA continuación escoge el nombre y tipo de jugadores que se van a enfrentar a muerte.");
 
         createFirstCharacter();
         createSecondCharacter();
