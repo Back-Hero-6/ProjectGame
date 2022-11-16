@@ -5,25 +5,32 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-
-        System.out.println("Welcome to Battle 1 vs 1." + "\n" + "You have to choose the type and name of both Characters");
-
+        //Calling method to create first character
         Character character1 = createFirstCharacter();
+        //Calling method to create second character
         Character character2 = createSecondCharacter();
+        //Calling method to initiate battle game between character1 and character2
         battle(character1, character2);
     }
 
     private static Character createFirstCharacter() {
+        System.out.println("╱╭╮╱╱╱╱╭╮╭━━╮╭━━━┳━━━━┳━━━━┳╮╱╱╭━━━╮╭━━━┳━━━┳━╮╭━┳━━━╮");
+        System.out.println("╭╯┃╱╱╱╭╯┃┃╭╮┃┃╭━╮┃╭╮╭╮┃╭╮╭╮┃┃╱╱┃╭━━╯┃╭━╮┃╭━╮┃┃╰╯┃┃╭━━╯");
+        System.out.println("╰╮┃╭╮╭╋╮┃┃╰╯╰┫┃╱┃┣╯┃┃╰┻╯┃┃╰┫┃╱╱┃╰━━╮┃┃╱╰┫┃╱┃┃╭╮╭╮┃╰━━╮");
+        System.out.println("╱┃┃╰╋╋╯┃┃┃╭━╮┃╰━╯┃╱┃┃╱╱╱┃┃╱┃┃╱╭┫╭━━╯┃┃╭━┫╰━╯┃┃┃┃┃┃╭━━╯");
+        System.out.println("╭╯╰┳╋╋┳╯╰┫╰━╯┃╭━╮┃╱┃┃╱╱╱┃┃╱┃╰━╯┃╰━━╮┃╰┻━┃╭━╮┃┃┃┃┃┃╰━━╮");
+        System.out.println("╰━━┻╯╰┻━━┻━━━┻╯╱╰╯╱╰╯╱╱╱╰╯╱╰━━━┻━━━╯╰━━━┻╯╱╰┻╯╰╯╰┻━━━╯");
+        System.out.println(blue+"Welcome to 1x1 Battle Game!" + "\n" + "To start a new battle you have to choose the type and name of both Characters!"+reset+"\n");
         Scanner sc = new Scanner((System.in));
         Character character1 = null;
-        System.out.println("First create the Character 1");
-        System.out.println("---------------");
+        System.out.println("First create the Character 1!");
+        System.out.println("-------------------------");
         System.out.println("Character types available:");
-        System.out.println("[1] -> Warrior");
-        System.out.println("[2] -> Wizard");
-        System.out.println("[3] -> Exit Game");
-
-        System.out.println("Choose the Character type: ");
+        System.out.println(green+"[1] -> Warrior");
+        System.out.println("[2] -> Wizard"+reset);
+        System.out.println("\u001B[31m"+"[3] -> Exit Game"+"\u001B[31m"+reset);
+        System.out.println();
+        System.out.println(red+"Choose the Character type by entering 1 or 2: "+reset);
 
         int options1 = 1;
 
@@ -32,9 +39,9 @@ public class Main {
             switch (options1) {
                 case 1: {
 
-                    System.out.println("You have chosen the warrior 1 ");
-                    System.out.println("----- ---------");
-                    System.out.println("Give the warrior 1 a name");
+                    System.out.println("You have chosen a warrior as character 1");
+                    System.out.println("---------------");
+                    System.out.println(red+"Give this warrior a name:"+reset);
 
                     String newName = sc.next();
                     int newHp = new Random().nextInt(100) + 100;
@@ -46,9 +53,9 @@ public class Main {
                 }
                 case 2: {
 
-                    System.out.println("You have chosen the wizard 1 ");
-                    System.out.println("----- ---------");
-                    System.out.println("Give the wizard 1 a name");
+                    System.out.println("You have chosen the a wizard as character 1 ");
+                    System.out.println("---------------");
+                    System.out.println(red+"Give this wizard a name:"+reset);
 
                     String newName = sc.next();
                     int newHp = new Random().nextInt(50) + 50;
@@ -62,7 +69,7 @@ public class Main {
                     System.exit(1);
                 }
                 default: {
-                    System.out.println("Select a correct Character type. Choose again.");
+                    System.err.println("Select a correct Character type. Choose again.");
                     break;
                 }
             }
@@ -74,14 +81,15 @@ public class Main {
         Scanner sc = new Scanner((System.in));
         Character character2 = null;
         System.out.println("---------------");
-        System.out.println("Now create the second character");
+        System.out.println("Now create the second character!");
         System.out.println("---------------");
         System.out.println("Character types available:");
-        System.out.println("[1] -> Warrior");
-        System.out.println("[2] -> Wizard");
-        System.out.println("[3] -> Exit Game");
+        System.out.println(green+"[1] -> Warrior");
+        System.out.println("[2] -> Wizard"+reset);
+        System.out.println("\u001B[31m"+"[3] -> Exit Game"+"\u001B[31m"+reset);
+        System.out.println();
 
-        System.out.println("Choose the Character type: ");
+        System.out.println(red+"Choose the Character type by entering 1 or 2:"+reset);
 
         int options2 = 1;
 
@@ -90,9 +98,9 @@ public class Main {
             switch (options2) {
                 case 1: {
 
-                    System.out.println("You have chosen the warrior 2");
-                    System.out.println("----- ---------");
-                    System.out.println("Give the warrior 2 a name");
+                    System.out.println(green+"You have chosen a warrior as character 2"+reset);
+                    System.out.println("---------------");
+                    System.out.println(red+"Give this warrior a name:"+reset);
 
                     String newName = sc.next();
                     int newHp = new Random().nextInt(100) + 100;
@@ -105,9 +113,9 @@ public class Main {
                 }
                 case 2: {
 
-                    System.out.println("You have chosen the wizard 2 ");
-                    System.out.println("----- ---------");
-                    System.out.println("Give the wizard 2 a name ");
+                    System.out.println(green+"You have chosen a wizard as character 2"+reset);
+                    System.out.println("---------------");
+                    System.out.println(red+"Give this wizard a name:"+reset);
 
                     String newName = sc.next();
                     int newHp = new Random().nextInt(50) + 50;
@@ -121,7 +129,7 @@ public class Main {
                     System.exit(1);
                 }
                 default: {
-                    System.out.println("Select a correct Character type. Choose again");
+                    System.err.println("Select a correct Character type. Choose again");
                 }
             }
         }
@@ -131,32 +139,45 @@ public class Main {
 
     public static void battle(Character character1, Character character2) throws InterruptedException {
         int counter = 1;
-        boolean winner;
         do {
-            System.out.println("Round " + counter + " starting!" + "\n");
+            System.out.println(green+"Round " + counter + " starting!" + "\n"+reset);
             character1.attack(character2);
             character2.attack(character1);
-            System.out.println("Round " + counter + " finalized: " + "\n" + character1 + "\n" + character2 + "\n");
-            System.out.println("------------------------");
+            System.out.println(red+"Round " + counter + " finalized:"+reset + "\n" + character1 + "\n" + character2 + "\n");
+            System.out.println("------------------------" + "\n");
             counter++;
             Thread.sleep(1000);
         } while (character1.isAlive() && character2.isAlive());
-
         if (character1.isAlive()) {
-            System.out.println(character1.getName() + " wins!");
-            System.out.println("------------------------");
-            System.out.println("Game finalized: Choose new players or exit game");
+            System.out.println(green+character1.getName() + " wins!"+reset+"\n");
+            System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
+            System.out.println("...resetting game..."+"\n");
+            System.out.println("----------------------------------------------------------------------------");
+            Thread.sleep(2000);
+            battle(createFirstCharacter(), createSecondCharacter());
         } else if (character2.isAlive()) {
-            System.out.println(character2.getName() + " wins!");
-            System.out.println("------------------------");
-            System.out.println("Game finalized: Choose new players or exit game");
+            System.out.println(green+character2.getName() + " wins!"+reset+"\n");
+            System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
+            System.out.println("...resetting game..."+"\n");
+            System.out.println("----------------------------------------------------------------------------");
+            Thread.sleep(2000);
+            battle(createFirstCharacter(), createSecondCharacter());
         } else {
-            System.out.println("Draw!");
-            System.out.println("------------------------");
-            System.out.println("Game finalized: Choose new players or exit game");
+            System.out.println(red+"There was a Draw!"+reset+"\n");
+            System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
+            System.out.println("...resetting game..."+"\n");
+            System.out.println("----------------------------------------------------------------------------");
+            Thread.sleep(2000);
             battle(createFirstCharacter(), createSecondCharacter());
         }
     }
+
+    //Setting up some colors for the output:
+    public static final String red = "\u001B[41m"; //background in red
+    public static final String reset = "\033[0m"; //reset color patterns
+    public static final String green = "\u001B[32m"; //green text
+
+    public static final String blue = "\u001B[34m"; //blue text
 }
 
 

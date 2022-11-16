@@ -1,10 +1,8 @@
 import java.util.Random;
 
 public class Warrior extends Character {
-    private int stamina; //Pendiente: random between 10-50, representing a resource
-    // the warrior consumes to make an attack (Private member)
-    private int strength; //Pendiente: random between 1-10, measuring how strong
-    // the warrior attack is (Private member)
+    private int stamina;
+    private int strength;
 
 
     //Constructor
@@ -15,7 +13,6 @@ public class Warrior extends Character {
     }
 
     //Getters & Setters
-    //Revisar getters y setters segun condiciones como el Random
 
     public int getStamina() {
         return stamina;
@@ -35,7 +32,7 @@ public class Warrior extends Character {
 
     //Function Attack
     public void attack(Character enemy) {
-        //Battle Mode generates a random attack type
+        //Variable battleMode generates a random attack type
         int battleMode = (Math.random() <= 0.5) ? 1 : 2;
         if (battleMode == 1 && getStamina() >= 5) {
             enemy.setHp(enemy.getHp() - getStrength());

@@ -1,8 +1,6 @@
 public class Wizard extends Character{
-    private int mana; //Pendiente: random between 10-50, representing a
-    // resource the wizard consumes to cast spells (Private member)
-    private int intelligence; //Pendiente: random between 1-50, measuring how
-    // strong the wizard spells are (Private member)
+    private int mana;
+    private int intelligence;
 
     //Constructor
     public Wizard(String name, int hp, int mana, int intelligence) {
@@ -32,6 +30,7 @@ public class Wizard extends Character{
 
     //Function Attack
     public void attack(Character enemy){
+        //Variable battleMode generates a random attack type
         int battleMode = (Math.random() <= 0.5) ? 1 : 2;
         if (battleMode == 1 && getMana() >= 5) {
             enemy.setHp(enemy.getHp()-getIntelligence());
