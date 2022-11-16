@@ -7,9 +7,9 @@ public class Main {
 
         System.out.println("Welcome to Battle 1 vs 1. \nYou have to choose the type and name of both Characters");
 
-        createFirstCharacter();
-        createSecondCharacter();
-
+        Character character1 = createFirstCharacter();
+        Character character2 = createSecondCharacter();
+        battle(character1,character2);
     }
 
     private static Character createFirstCharacter() {
@@ -117,5 +117,22 @@ public class Main {
         }
         return character2;
 
+    }
+
+    public static void battle(Character character1, Character character2) {
+        do {
+            character1.attack(character2);
+            character2.attack(character1);
+
+        } while (character1.isAlive() && character2.isAlive());
+
+        if (character1.isAlive()) {
+            System.out.println(character1.getName() + "wins!");
+        } else if (character2.isAlive()) {
+            System.out.println(character2.getName() + "wins!");
+        } else {
+            System.out.println("Draw!");
+            battle(character1,character2);
+        }
     }
 }

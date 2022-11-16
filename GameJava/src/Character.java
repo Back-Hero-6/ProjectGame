@@ -1,4 +1,4 @@
-public class Character {
+public abstract class Character {
     private String id;
     private String name;
     private int hp; // Pendiente: random between 100-200 to warriors and 50-100 for wizards,
@@ -39,10 +39,13 @@ public class Character {
     }
 
     public boolean isAlive() {
-        return isAlive;
-    }
+            if (getHp() <= 0) isAlive = false;
+            return isAlive;
+        }
 
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+
+    public abstract void attack(Character enemy);
 }

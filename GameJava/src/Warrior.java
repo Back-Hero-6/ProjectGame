@@ -45,5 +45,6 @@ public class Warrior extends Character {
         } else setStamina(getStamina() + 2);
         System.out.println("Not enough stamina to perform attack. Stamina was increased to 2");
     }
+
 }
 
