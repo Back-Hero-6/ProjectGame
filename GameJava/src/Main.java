@@ -67,7 +67,8 @@ public class Main {
                     return character1;
                 }
                 case 3: {
-                    System.out.println("Goodbye!");
+                    System.out.println("\n"+blue+"GOODBYE!"+reset);
+                    System.out.println("---------------");
                     System.exit(1);
                 }
                 default: {
@@ -128,6 +129,8 @@ public class Main {
                     return character2;
                 }
                 case 3: {
+                    System.out.println("\n"+blue+"GOODBYE!"+reset);
+                    System.out.println("---------------");
                     System.exit(1);
                 }
                 default: {
@@ -136,7 +139,6 @@ public class Main {
             }
         }
         return character2;
-
     }
 
     public static void battle(Character character1, Character character2) throws InterruptedException {
