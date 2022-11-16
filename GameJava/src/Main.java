@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -66,6 +67,7 @@ public class Main {
                     return character1;
                 }
                 case 3: {
+                    System.out.println("Goodbye!");
                     System.exit(1);
                 }
                 default: {
@@ -139,8 +141,14 @@ public class Main {
 
     public static void battle(Character character1, Character character2) throws InterruptedException {
         int counter = 1;
+        System.out.println("\n"+blue+ "BOTH CHARACTERS SELECTED:"+reset);
+        System.out.println(character1);
+        System.out.println(character2 + "\n");
+        System.out.println("Preparing battle...");
+        System.out.println("------------------------" + "\n");
+        Thread.sleep(3000);
         do {
-            System.out.println(green+"Round " + counter + " starting!" + "\n"+reset);
+            System.out.println(green+"ROUND " + counter + " starts:" + "\n"+reset);
             character1.attack(character2);
             character2.attack(character1);
             System.out.println(red+"Round " + counter + " finalized:"+reset + "\n" + character1 + "\n" + character2 + "\n");
@@ -153,21 +161,21 @@ public class Main {
             System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
             System.out.println("...resetting game..."+"\n");
             System.out.println("----------------------------------------------------------------------------");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             battle(createFirstCharacter(), createSecondCharacter());
         } else if (character2.isAlive()) {
             System.out.println(green+character2.getName() + " wins!"+reset+"\n");
             System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
             System.out.println("...resetting game..."+"\n");
             System.out.println("----------------------------------------------------------------------------");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             battle(createFirstCharacter(), createSecondCharacter());
         } else {
             System.out.println(red+"There was a Draw!"+reset+"\n");
             System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
             System.out.println("...resetting game..."+"\n");
             System.out.println("----------------------------------------------------------------------------");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             battle(createFirstCharacter(), createSecondCharacter());
         }
     }
