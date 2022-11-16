@@ -37,7 +37,7 @@ public class Wizard extends Character{
             setMana(getMana() - 5);
             System.out.println(getName() + " attacks with Fireball!" + "\n");
         } else if (getMana() >= 1) {
-            enemy.setHp(enemy.getHp() - (getMana() / 2));
+            enemy.setHp(enemy.getHp()-2);
             setMana(getMana() + 1);
             System.out.println(getName() + " attacks with Staff Hit!" + "\n");
         } else {setMana(getMana() + 2);

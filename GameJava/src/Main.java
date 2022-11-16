@@ -44,9 +44,9 @@ public class Main {
                     System.out.println(red+"Give this warrior a name:"+reset);
 
                     String newName = sc.next();
-                    int newHp = new Random().nextInt(100) + 100;
-                    int newStamina = new Random().nextInt(49) + 10;
-                    int newStrength = new Random().nextInt(9) + 1;
+                    int newHp = new Random().nextInt(101) + 100;
+                    int newStamina = new Random().nextInt(41) + 10;
+                    int newStrength = new Random().nextInt(10) + 1;
                     character1 = new Warrior(newName, newHp, newStamina, newStrength);
                     options1 = 0;
                     return character1;
@@ -58,9 +58,9 @@ public class Main {
                     System.out.println(red+"Give this wizard a name:"+reset);
 
                     String newName = sc.next();
-                    int newHp = new Random().nextInt(50) + 50;
-                    int newMana = new Random().nextInt(40) + 10;
-                    int newIntelligence = new Random().nextInt(49) + 10;
+                    int newHp = new Random().nextInt(51) + 50;
+                    int newMana = new Random().nextInt(41) + 10;
+                    int newIntelligence = new Random().nextInt(50) + 1;
                     character1 = new Wizard(newName, newHp, newMana, newIntelligence);
                     options1 = 0;
                     return character1;
@@ -103,9 +103,9 @@ public class Main {
                     System.out.println(red+"Give this warrior a name:"+reset);
 
                     String newName = sc.next();
-                    int newHp = new Random().nextInt(100) + 100;
-                    int newStamina = new Random().nextInt(49) + 10;
-                    int newStrenght = new Random().nextInt(9) + 1;
+                    int newHp = new Random().nextInt(101) + 100;
+                    int newStamina = new Random().nextInt(41) + 10;
+                    int newStrenght = new Random().nextInt(10) + 1;
                     character2 = new Warrior(newName, newHp, newStamina, newStrenght);
                     options2 = 0;
                     return character2;
@@ -118,9 +118,9 @@ public class Main {
                     System.out.println(red+"Give this wizard a name:"+reset);
 
                     String newName = sc.next();
-                    int newHp = new Random().nextInt(50) + 50;
-                    int newMana = new Random().nextInt(40) + 10;
-                    int newIntelligence = new Random().nextInt(49) + 10;
+                    int newHp = new Random().nextInt(51) + 50;
+                    int newMana = new Random().nextInt(41) + 10;
+                    int newIntelligence = new Random().nextInt(50) + 1;
                     character2 = new Wizard(newName, newHp, newMana, newIntelligence);
                     options2 = 0;
                     return character2;
