@@ -41,7 +41,7 @@ public class Wizard extends Character{
             setMana(getMana() + 1);
             System.out.println(getName() + " attacks with Staff Hit!" + "\n");
         } else {setMana(getMana() + 2);
-        System.out.println("Not enough mana to perform attack. Mana was increased to 2");}
+        System.out.println(getName()+" has not enough mana to perform attack. Mana was increased to 2" + "\n");}
     }
 
     public String toString() {

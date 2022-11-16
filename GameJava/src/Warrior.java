@@ -43,7 +43,7 @@ public class Warrior extends Character {
             setStamina(getStamina() + 1);
             System.out.println((getName() + " attacks with Weak attack!" + "\n"));
         } else {setStamina(getStamina() + 2);
-        System.out.println("Not enough stamina to perform attack. Stamina was increased to 2");}
+        System.out.println(getName()+" has not enough stamina to perform attack. Stamina was increased to 2" + "\n");}
     }
 
     @Override

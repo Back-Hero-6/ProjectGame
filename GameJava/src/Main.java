@@ -20,6 +20,7 @@ public class Main {
         System.out.println("╭╯╰┳╋╋┳╯╰┫╰━╯┃╭━╮┃╱┃┃╱╱╱┃┃╱┃╰━╯┃╰━━╮┃╰┻━┃╭━╮┃┃┃┃┃┃╰━━╮");
         System.out.println("╰━━┻╯╰┻━━┻━━━┻╯╱╰╯╱╰╯╱╱╱╰╯╱╰━━━┻━━━╯╰━━━┻╯╱╰┻╯╰╯╰┻━━━╯");
         System.out.println(blue+"Welcome to 1x1 Battle Game!" + "\n" + "To start a new battle you have to choose the type and name of both Characters!"+reset+"\n");
+
         Scanner sc = new Scanner((System.in));
         Character character1 = null;
         System.out.println("First create the Character 1!");
@@ -106,8 +107,8 @@ public class Main {
                     String newName = sc.next();
                     int newHp = new Random().nextInt(101) + 100;
                     int newStamina = new Random().nextInt(41) + 10;
-                    int newStrenght = new Random().nextInt(10) + 1;
-                    character2 = new Warrior(newName, newHp, newStamina, newStrenght);
+                    int newStrength = new Random().nextInt(10) + 1;
+                    character2 = new Warrior(newName, newHp, newStamina, newStrength);
                     options2 = 0;
                     return character2;
 
@@ -141,6 +142,8 @@ public class Main {
 
     public static void battle(Character character1, Character character2) throws InterruptedException {
         int counter = 1;
+        int init_hp1 = character1.getHp();
+        int init_hp2 = character2.getHp();
         System.out.println("\n"+blue+ "BOTH CHARACTERS SELECTED:"+reset);
         System.out.println(character1);
         System.out.println(character2 + "\n");
@@ -172,11 +175,13 @@ public class Main {
             battle(createFirstCharacter(), createSecondCharacter());
         } else {
             System.out.println(red+"There was a Draw!"+reset+"\n");
-            System.out.println(red+"Battle finalized: Choose your characters again or exit game"+reset+"\n");
-            System.out.println("...resetting game..."+"\n");
+            System.out.println(red+"Battle finalized: Wait while new battle is initialized"+reset+"\n");
+            System.out.println("...generating new battle..."+"\n");
             System.out.println("----------------------------------------------------------------------------");
+            character1.setHp(init_hp1);
+            character2.setHp(init_hp2);
             Thread.sleep(3000);
-            battle(createFirstCharacter(), createSecondCharacter());
+            battle(character1, character2);
         }
     }
 
@@ -184,6 +189,5 @@ public class Main {
     public static final String red = "\u001B[41m"; //background in red
     public static final String reset = "\033[0m"; //reset color patterns
     public static final String green = "\u001B[32m"; //green text
-
     public static final String blue = "\u001B[34m"; //blue text
 }

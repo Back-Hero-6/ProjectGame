@@ -42,9 +42,11 @@ public abstract class Character {
             return isAlive;
         }
 
+    //Abstract method attack
+    public abstract void attack (Character enemy);
+
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
 
-    public abstract void attack(Character enemy);
 }
