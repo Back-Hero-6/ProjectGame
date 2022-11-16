@@ -187,6 +187,3 @@ public class Main {
 
     public static final String blue = "\u001B[34m"; //blue text
 }
-
-
-
