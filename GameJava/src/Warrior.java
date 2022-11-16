@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Warrior extends Character {
     private int stamina; //Pendiente: random between 10-50, representing a resource
     // the warrior consumes to make an attack (Private member)
@@ -33,18 +35,23 @@ public class Warrior extends Character {
 
     //Function Attack
     public void attack(Character enemy) {
+        //Battle Mode generates a random attack type
         int battleMode = (Math.random() <= 0.5) ? 1 : 2;
         if (battleMode == 1 && getStamina() >= 5) {
             enemy.setHp(enemy.getHp() - getStrength());
             setStamina(getStamina() - 5);
-            System.out.println("Heavy attack!");
+            System.out.println((getName() + " attacks with Heavy attack!" + "\n"));
         } else if (getStamina() >= 1) {
             enemy.setHp(enemy.getHp() - (getStrength() / 2));
             setStamina(getStamina() + 1);
-            System.out.println("Weak attack!");
-        } else setStamina(getStamina() + 2);
-        System.out.println("Not enough stamina to perform attack. Stamina was increased to 2");
+            System.out.println((getName() + " attacks with Weak attack!" + "\n"));
+        } else {setStamina(getStamina() + 2);
+        System.out.println("Not enough stamina to perform attack. Stamina was increased to 2");}
     }
 
+    @Override
+    public String toString() {
+        return getName()  + " has " + getStamina() + " stamina, " + getStrength() + " strength, " + getHp() + " health points";
+    }
 }
 

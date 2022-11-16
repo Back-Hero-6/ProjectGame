@@ -36,13 +36,17 @@ public class Wizard extends Character{
         if (battleMode == 1 && getMana() >= 5) {
             enemy.setHp(enemy.getHp()-getIntelligence());
             setMana(getMana() - 5);
-            System.out.println("Fireball!");
+            System.out.println(getName() + " attacks with Fireball!" + "\n");
         } else if (getMana() >= 1) {
-            enemy.setHp(enemy.getHp() - (getMana() / 2)); //check if it is really Mana/2 or only -2hp points.
+            enemy.setHp(enemy.getHp() - (getMana() / 2));
             setMana(getMana() + 1);
-            System.out.println("Staff hit!");
-        } else setMana(getMana() + 2);
-        System.out.println("Not enough mana to perform attack. Mana was increased to 2");
+            System.out.println(getName() + " attacks with Staff Hit!" + "\n");
+        } else {setMana(getMana() + 2);
+        System.out.println("Not enough mana to perform attack. Mana was increased to 2");}
+    }
+
+    public String toString() {
+        return getName()  + " has " + getMana() + " mana, " + getIntelligence() + " intelligence, " + getHp() + " health points";
     }
 }
 
