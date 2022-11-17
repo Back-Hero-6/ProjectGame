@@ -142,8 +142,6 @@ public class Main {
 
     public static void battle(Character character1, Character character2) throws InterruptedException {
         int counter = 1;
-        int init_hp1 = character1.getHp();
-        int init_hp2 = character2.getHp();
         System.out.println("\n" + blue + "BOTH CHARACTERS SELECTED:" + reset);
         System.out.println(character1);
         System.out.println(character2 + "\n");
@@ -175,13 +173,11 @@ public class Main {
             battle(createFirstCharacter(), createSecondCharacter());
         } else {
             System.out.println(red + "There was a Draw!" + reset + "\n");
-            System.out.println(red + "Battle finalized: Wait while new battle is initialized" + reset + "\n");
-            System.out.println("...generating new battle..." + "\n");
+            System.out.println(red + "Battle finalized: Choose your characters again or exit game" + reset + "\n");
+            System.out.println("...resetting game..." + "\n");
             System.out.println("----------------------------------------------------------------------------");
-            character1.setHp(init_hp1);
-            character2.setHp(init_hp2);
             Thread.sleep(3000);
-            battle(character1, character2);
+            battle(createFirstCharacter(), createSecondCharacter());
         }
     }
 
